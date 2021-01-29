@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: datadog
   interval: 30s
-  releaseName: datadog
+  releaseName: datadogxx
   targetNamespace: datadog
   values:
     containers:
@@ -48,4 +48,3 @@ spec:
           cpu: 200m
           memory: 8Mi
     priorityClassName: high-priority
-

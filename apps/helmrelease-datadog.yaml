@@ -11,7 +11,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: datadog
-  interval: 30s
+  interval: 29s
   releaseName: dd
   targetNamespace: datadog
-

@@ -1,0 +1,51 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: datadog
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: helm
+      sourceRef:
+        kind: HelmRepository
+        name: datadog
+  interval: 30s
+  releaseName: datadog
+  targetNamespace: datadog
+  values:
+    containers:
+      agent:
+        resources:
+          limits:
+            memory: 512Mi
+          requests:
+            memory: 512Mi
+      process-agent:
+        resources:
+          limits:
+            memory: 128Mi
+          requests:
+            memory: 128Mi
+    datadog:
+      apiKey: ""
+      apiKeyExistingSecret: datadog
+      apm:
+        enabled: true
+      logLevel: warn
+      logs:
+        containerCollectAll: true
+        enabled: true
+      tags:
+      - env: devt
+    kube-state-metrics:
+      resources:
+        limits:
+          cpu: 200m
+          memory: 512Mi
+        requests:
+          cpu: 200m
+          memory: 512Mi
+    priorityClassName: high-priority
+

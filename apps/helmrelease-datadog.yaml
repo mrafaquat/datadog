@@ -19,15 +19,15 @@ spec:
       agent:
         resources:
           limits:
-            memory: 512Mi
+            memory: 8Mi
           requests:
-            memory: 512Mi
+            memory: 8Mi
       process-agent:
         resources:
           limits:
-            memory: 128Mi
+            memory: 4Mi
           requests:
-            memory: 128Mi
+            memory: 4Mi
     datadog:
       apiKey: ""
       apiKeyExistingSecret: datadog
@@ -43,9 +43,8 @@ spec:
       resources:
         limits:
           cpu: 200m
-          memory: 512Mi
+          memory: 4Mi
         requests:
           cpu: 200m
-          memory: 512Mi
+          memory: 4Mi
     priorityClassName: high-priority
-

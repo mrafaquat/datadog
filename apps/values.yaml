@@ -18,16 +18,17 @@ kube-state-metrics:
       cpu: 200m
       memory: 8Mi
 containers:
-  agent:
-    resources:
-      requests:
-        memory: 16Mi
-      limits:
-        memory: 16Mi
-  process-agent:
-    resources:
-      requests:
-        memory: 8Mi
-      limits:
-        memory: 8Mi
+  kind:
+    agent:
+      resources:
+        requests:
+          memory: 16Mi
+        limits:
+          memory: 16Mi
+    process-agent:
+      resources:
+        requests:
+          memory: 8Mi
+        limits:
+          memory: 8Mi
 priorityClassName: high-priority

@@ -14,38 +14,4 @@ spec:
   interval: 30s
   releaseName: dd
   targetNamespace: datadog
-  values:
-    containers:
-      agent:
-        resources:
-          limits:
-            memory: 16Mi
-          requests:
-            memory: 16Mi
-      process-agent:
-        resources:
-          limits:
-            memory: 8Mi
-          requests:
-            memory: 8Mi
-    datadog:
-      apiKey: ""
-      apiKeyExistingSecret: datadog
-      apm:
-        enabled: true
-      logLevel: warn
-      logs:
-        containerCollectAll: true
-        enabled: true
-      tags:
-      - env: devt
-    kube-state-metrics:
-      resources:
-        limits:
-          cpu: 200m
-          memory: 8Mi
-        requests:
-          cpu: 200m
-          memory: 8Mi
-    priorityClassName: high-priority
 

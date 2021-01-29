@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: datadog
   interval: 30s
-  releaseName: datadogxxx
+  releaseName: dd
   targetNamespace: datadog
   values:
     containers:
